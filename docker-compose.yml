@@ -1,0 +1,13 @@
+version: '2'
+services:
+  jenkins:
+    image: my_jenkins
+    container_name: my_jenkins
+    volumes:
+     - ${PWD}/jenkins-home:/var/jenkins_home
+    ports:
+     - "8080:8080"
+     - "50000:50000"
+    environment:
+     - ENVIRONMENT=DEV
+    restart: always
