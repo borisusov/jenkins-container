@@ -1,6 +1,7 @@
-version: '2'
+version: '3'
 services:
   jenkins:
+    build: ${PWD}
     image: my_jenkins
     container_name: my_jenkins
     volumes:
