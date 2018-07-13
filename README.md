@@ -4,10 +4,19 @@ default port is 8080
 we can change it in docker-compose.yml
 use command: 
 
-for start container:
-  docker-compose up -d
-for stop container:
-  docker-compose down
+For start container use script
+
+start_jenkins.sh with [start] argument
+
+For stop container use script
+start_jenkins.sh with [down] argument
+
+
+Obsolete section
+#for start container:
+#  docker-compose up -d
+#for stop container:
+#  docker-compose down
 
 WARNING:
 Very big ./jenkins-home folder is not commited.
