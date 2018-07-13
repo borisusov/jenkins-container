@@ -10,31 +10,35 @@ choice=$1
 
 
 
-if [ "$choice" == start ] ; then
-	docker-compose up --build -d
+case   "$choice" in
+	
+	"start")    docker-compose up --build -d
+
 echo
-echo Hello from Jenkins
-echo I m working normally
-elif [ "$choice" == down ] ; then
-	docker-compose down
-echo Good Bye from Jenkins
+echo "    Hello from Jenkins"
+echo "   I m working correctly"
+echo 
+echo "Number of used arguments:" $#
+echo 
+		;;
 
-else 
-	echo "$choice is not valid answer"
-	echo "Please try again"
-fi
+	"down")    docker-compose down
+
+echo
+echo "    Good Bye from Jenkins!"
+		;;
+
+	*)	echo
+		echo "$choice is not valid input"
+	        echo "Please try again"
+
+
+
+esac
+exit 0
 
 
 
 
-#for down
-#usov@usov-Lenovo-V570:~/solutions/jenkins-container$ docker-compose down
 
-#for up
-#usov@usov-Lenovo-V570:~/solutions/jenkins-container$ docker-compose up --build
 
-#echo param_0  # skript name 
-#echo 1_param_$1  #first  param
-#echo 2_param_$2  # second param
-#echo 3_param_$3  # third param
-#echo all_param_@ all params
